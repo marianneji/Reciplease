@@ -15,6 +15,7 @@
 		725F56FB23B3B3CD00E67F45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 725F56FA23B3B3CD00E67F45 /* Assets.xcassets */; };
 		725F56FE23B3B3CD00E67F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 725F56FC23B3B3CD00E67F45 /* LaunchScreen.storyboard */; };
 		725F570923B3B3CD00E67F45 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F570823B3B3CD00E67F45 /* RecipleaseTests.swift */; };
+		725F571A23B3B73D00E67F45 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 725F571923B3B73D00E67F45 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		725F570423B3B3CD00E67F45 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		725F570823B3B3CD00E67F45 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		725F570A23B3B3CD00E67F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		725F571923B3B73D00E67F45 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 		725F56E223B3B3CB00E67F45 = {
 			isa = PBXGroup;
 			children = (
+				725F571923B3B73D00E67F45 /* .gitignore */,
 				725F56ED23B3B3CB00E67F45 /* Reciplease */,
 				725F570723B3B3CD00E67F45 /* RecipleaseTests */,
 				725F56EC23B3B3CB00E67F45 /* Products */,
@@ -81,13 +84,10 @@
 		725F56ED23B3B3CB00E67F45 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
-				725F56EE23B3B3CB00E67F45 /* AppDelegate.swift */,
-				725F56F023B3B3CB00E67F45 /* SceneDelegate.swift */,
-				725F56F223B3B3CB00E67F45 /* ViewController.swift */,
-				725F56F423B3B3CB00E67F45 /* Main.storyboard */,
-				725F56FA23B3B3CD00E67F45 /* Assets.xcassets */,
-				725F56FC23B3B3CD00E67F45 /* LaunchScreen.storyboard */,
-				725F56FF23B3B3CD00E67F45 /* Info.plist */,
+				725F571623B3B40300E67F45 /* SupportingFiles */,
+				725F571523B3B3FA00E67F45 /* View */,
+				725F571423B3B3F100E67F45 /* Controller */,
+				725F571323B3B3E900E67F45 /* Model */,
 				725F56F723B3B3CB00E67F45 /* Reciplease.xcdatamodeld */,
 			);
 			path = Reciplease;
@@ -100,6 +100,41 @@
 				725F570A23B3B3CD00E67F45 /* Info.plist */,
 			);
 			path = RecipleaseTests;
+			sourceTree = "<group>";
+		};
+		725F571323B3B3E900E67F45 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		725F571423B3B3F100E67F45 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				725F56F223B3B3CB00E67F45 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		725F571523B3B3FA00E67F45 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				725F56F423B3B3CB00E67F45 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		725F571623B3B40300E67F45 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				725F56EE23B3B3CB00E67F45 /* AppDelegate.swift */,
+				725F56F023B3B3CB00E67F45 /* SceneDelegate.swift */,
+				725F56FA23B3B3CD00E67F45 /* Assets.xcassets */,
+				725F56FF23B3B3CD00E67F45 /* Info.plist */,
+				725F56FC23B3B3CD00E67F45 /* LaunchScreen.storyboard */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,6 +218,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				725F571A23B3B73D00E67F45 /* .gitignore in Resources */,
 				725F56FE23B3B3CD00E67F45 /* LaunchScreen.storyboard in Resources */,
 				725F56FB23B3B3CD00E67F45 /* Assets.xcassets in Resources */,
 				725F56F623B3B3CB00E67F45 /* Main.storyboard in Resources */,
@@ -368,7 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BGGLL93M78;
-				INFOPLIST_FILE = Reciplease/Info.plist;
+				INFOPLIST_FILE = Reciplease/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -376,7 +412,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mji.Reciplease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -386,7 +422,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BGGLL93M78;
-				INFOPLIST_FILE = Reciplease/Info.plist;
+				INFOPLIST_FILE = Reciplease/SupportingFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -394,7 +430,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mji.Reciplease;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
