@@ -7,3 +7,13 @@
 //
 
 import Foundation
+import Alamofire
+
+class RecipeSearchManager {
+
+    private var shared = RecipeSearchManager()
+    private init() {}
+
+    private let appID = ApiKeys.valueForApiKey(named: "app_id")
+    private let appKey = ApiKeys.valueForApiKey(named: "app_key")
+}
