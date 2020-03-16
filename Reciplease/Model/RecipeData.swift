@@ -9,6 +9,10 @@
 import Foundation
 
 struct RecipeData: Codable {
+    let q: String
+    let from, to: Int
+    let more: Bool
+    let count: Int
     var hits: [Hit]
 }
 
