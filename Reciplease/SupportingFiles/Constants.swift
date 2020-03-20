@@ -9,7 +9,9 @@
 import Foundation
 
 struct K {
-    static let collectionViewCellID = "recipeCell"
+    static let collectionViewCellID = "RecipeCell"
     static let tableViewCellID = "FavoriteRecipeCell"
     static let ingredientCellId = "Ingredients"
+    static let showCollectionRecipes = "RecipeCollection"
+    static let collectionSegueId = "toAllRecipes"
 }
