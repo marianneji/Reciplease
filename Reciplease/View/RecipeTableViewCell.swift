@@ -27,7 +27,7 @@ class RecipeTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
-    func setupCell (_ recipe: Hit) {
+    func setupCellFromSearch (_ recipe: Hit) {
 
         recipeTitleLabel.text = recipe.recipe.label
         if let stringUrl = URL(string: recipe.recipe.image) {
@@ -39,6 +39,14 @@ class RecipeTableViewCell: UITableViewCell {
         }
         timeLabel.isHidden = false
         timeLabel.text = stringOfMinToHours(minutes: recipe.recipe.totalTime)
+    }
+
+    func setupCellFromFavorites(_ recipe: FavoriteRecipes) {
+        recipeTitleLabel.text = recipe.label
+        guard let imageUrl = recipe.image else { return }
+        if let stringUrl = URL(string: imageUrl) {
+            recipeImageView.load(url: stringUrl)
+        }
     }
 
     func stringOfMinToHours(minutes: Int) -> String {
