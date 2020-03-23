@@ -14,6 +14,7 @@ class IngredientViewController: UIViewController {
     @IBOutlet weak var ingredientTableView: UITableView! { didSet { ingredientTableView.tableFooterView = UIView() }}
     @IBOutlet weak var searchButton: UIButton!
 
+    var alert = UIAlertController()
     var recipeManager = RecipeSearchManager()
     var recipeData: RecipeData?
     var ingredients = [String]()
@@ -23,42 +24,49 @@ class IngredientViewController: UIViewController {
         super.viewDidLoad()
         ingredientTableView.reloadData()
         ingredientTextField.delegate = self
-        
-
-
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        searchButton.isEnabled = true
     }
 
     @IBAction func addButtonPressed(_ sender: UIButton) {
         guard let ingredient = ingredientTextField.text else { return }
-        ingredients.append(ingredient)
-        ingredientTableView.reloadData()
+        if ingredient == "" {
+            didFailWithError(message: "Please enter some ingredient")
+        } else {
+            ingredients.append(ingredient)
+            ingredientTableView.reloadData()
+        }
         ingredientTextField.resignFirstResponder()
     }
     
     @IBAction func getRecipePressed(_ sender: UIButton) {
+        displayAlertActivity(alert: &alert, title: "Loading recipes...\nPlease wait")
+        searchButton.isEnabled = false
         recipeManager.getRecipe(ingredients: ingredients.joined(separator: ",")) { (result) in
+
             DispatchQueue.main.async {
-                switch result {
-                case .failure(let error):
-                    print("\(error) in result...ou là")
-                case .success(let recipesData):
-                    self.recipeData = recipesData
-                    self.performSegue(withIdentifier: "toAllRecipes", sender: nil)
-                    for hit in self.recipeData!.hits {
-                        print("\(String(describing: hit.recipe.label))")
+                self.dismissAlertActivity(alert: self.alert) {
+                    switch result {
+                    case .failure(let error):
+                        self.searchButton.isEnabled = true
+                        self.didFailWithError(message: error.localizedDescription)
+                        print("\(error) in result...ou là")
+                    case .success(let recipesData):
+                        self.recipeData = recipesData
+                        self.performSegue(withIdentifier: "toAllRecipes", sender: nil)
                     }
-
-
                 }
             }
-
         }
-
     }
+
     @IBAction func clearPressed(_ sender: UIBarButtonItem) {
         ingredients.removeAll()
         ingredientTableView.reloadData()
     }
+
     @IBAction func vegetarianSwitch(_ sender: UISwitch) {
     }
 }
@@ -78,21 +86,19 @@ extension IngredientViewController: UITableViewDataSource {
         cell.textLabel?.text = ingredients[indexPath.row]
         return cell
     }
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-           ingredients.remove(at: indexPath.row)
+            ingredients.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         guard segue.identifier == "toAllRecipes" else { return }
         guard let recipesVC = segue.destination as? RecipesTableViewController else { return }
         recipesVC.recipeData = recipeData
-
-        }
-
+    }
 }
 
 extension IngredientViewController: UITextFieldDelegate {
@@ -100,6 +106,5 @@ extension IngredientViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
         textField.text = ""
     }
-
 }
 
