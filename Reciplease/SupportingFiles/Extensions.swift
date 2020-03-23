@@ -39,3 +39,29 @@ extension UIImageView {
         }
     }
 }
+extension UIViewController {
+
+    func didFailWithError(message: String) {
+        let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(ac, animated: true)
+    }
+
+    func displayAlertActivity(alert: inout UIAlertController, title: String) {
+        alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let activityIndicator = UIActivityIndicatorView(style: .gray)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.isUserInteractionEnabled = false
+        activityIndicator.startAnimating()
+        alert.view.addSubview(activityIndicator)
+        alert.view.heightAnchor.constraint(equalToConstant: 95).isActive = true
+        activityIndicator.centerXAnchor.constraint(equalTo: alert.view.centerXAnchor, constant: 0).isActive = true
+        activityIndicator.bottomAnchor.constraint(equalTo: alert.view.bottomAnchor, constant: -20).isActive = true
+
+        present(alert, animated: true, completion: nil)
+    }
+
+    func dismissAlertActivity(alert: UIAlertController, completion: (() -> Void)?) {
+        alert.dismiss(animated: true, completion: completion)
+    }
+}
