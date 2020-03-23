@@ -8,23 +8,32 @@
 
 import UIKit
 
+
 class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var recipeImageView: UIImageView!
 
     @IBOutlet weak var favoriteBarButton: UIBarButtonItem!
 
     @IBOutlet weak var ingredientsTextView: UITextView!
+
+    @IBOutlet weak var recipeLabel: UILabel!
     var selectedRecipe: Hit?
-    
+    var vcOne: Bool = true
+    var favoriteRecipe: FavoriteRecipes?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpView()
+        if vcOne {
+            setUpViewfromSearch()
+        } else {
+            setupViewFromFavorites()
+        }
         // Do any additional setup after loading the view.
     }
 
-    func setUpView() {
+    func setUpViewfromSearch() {
         guard let recipe = selectedRecipe else { return }
-        self.title = recipe.recipe.label
+        recipeLabel.text = recipe.recipe.label
         if let stringUrl = URL(string: recipe.recipe.image) {
             recipeImageView.load(url: stringUrl)
         }
@@ -33,23 +42,46 @@ class DetailRecipeViewController: UIViewController {
             print("\(index + 1) : \(ingredients)\n")
         }
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupViewFromFavorites() {
+        guard let recipe = favoriteRecipe else { return }
+        recipeLabel.text = recipe.label
+        guard let image = recipe.image else { return }
+        if let stringUrl = URL(string: image) {
+            recipeImageView.load(url: stringUrl)
+        }
+        guard let ingredients = recipe.ingredients else { return }
+        ingredientsTextView.text += ingredients
+        print(ingredients)
     }
-    */
 
     @IBAction func getDirectionsPressed(_ sender: UIButton) {
         guard let recipe = selectedRecipe else { return }
+        guard let favoriteRecipe = favoriteRecipe else { return }
+        if vcOne {
         guard let url = URL(string: recipe.recipe.url) else { return }
         UIApplication.shared.open(url)
+        } else {
+            guard let favoriteUrl = favoriteRecipe.url else { return }
+            guard let url = URL(string: favoriteUrl) else { return }
+            UIApplication.shared.open(url)
+        }
     }
     @IBAction func favoritePressed(_ sender: UIBarButtonItem) {
+
+        //        changer l'image du thumbs up
+        guard let selectedRecipe = selectedRecipe else { return }
+        let favoriteRecipe = FavoriteRecipes(context: AppDelegate.viewContext)
+        favoriteRecipe.label = selectedRecipe.recipe.label
+        favoriteRecipe.image = selectedRecipe.recipe.image
+        favoriteRecipe.url = selectedRecipe.recipe.url
+        for ingredient in selectedRecipe.recipe.ingredientLines {
+            favoriteRecipe.ingredients = ingredient
+        }
+        do {
+            try AppDelegate.viewContext.save()
+        } catch {
+            print(error.localizedDescription)
+        }
     }
 }
