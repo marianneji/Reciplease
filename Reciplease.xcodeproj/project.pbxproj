@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6E66DF47E8DB0B7AF83C0BD5 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA0CE8FC00834DF2543F7A13 /* Pods_Reciplease.framework */; };
+		72390F872425072B002334AE /* FavoriteRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72390F862425072B002334AE /* FavoriteRecipes.swift */; };
 		723BC82B2422573D007D2A01 /* RecipesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723BC8292422573D007D2A01 /* RecipesTableViewController.swift */; };
 		723BC82E242257BE007D2A01 /* RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 723BC82D242257BE007D2A01 /* RecipeTableViewCell.swift */; };
 		723BC82F242264A6007D2A01 /* RecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723BC82A2422573D007D2A01 /* RecipeTableViewCell.xib */; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		30591CA10A93810BB48BB2EE /* Pods_RecipleaseTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipleaseTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F2D5F67684A1DD62E24151A /* Pods-RecipleaseTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipleaseTests.release.xcconfig"; path = "Target Support Files/Pods-RecipleaseTests/Pods-RecipleaseTests.release.xcconfig"; sourceTree = "<group>"; };
+		72390F862425072B002334AE /* FavoriteRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipes.swift; sourceTree = "<group>"; };
 		723BC8292422573D007D2A01 /* RecipesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewController.swift; sourceTree = "<group>"; };
 		723BC82A2422573D007D2A01 /* RecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeTableViewCell.xib; sourceTree = "<group>"; };
 		723BC82D242257BE007D2A01 /* RecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTableViewCell.swift; sourceTree = "<group>"; };
@@ -146,7 +148,6 @@
 				725F571323B3B3E900E67F45 /* Model */,
 				725F571523B3B3FA00E67F45 /* View */,
 				725F571423B3B3F100E67F45 /* Controller */,
-				725F56F723B3B3CB00E67F45 /* Reciplease.xcdatamodeld */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -167,6 +168,8 @@
 				725F571B23B3B7E200E67F45 /* SearchManager.swift */,
 				724D478A241B9F91003D6EC2 /* RecipeData.swift */,
 				72A2F864241FEBAC00CA8C0F /* SearchSession.swift */,
+				725F56F723B3B3CB00E67F45 /* Reciplease.xcdatamodeld */,
+				72390F862425072B002334AE /* FavoriteRecipes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -391,6 +394,7 @@
 				724D478B241B9F91003D6EC2 /* RecipeData.swift in Sources */,
 				725F56F123B3B3CB00E67F45 /* SceneDelegate.swift in Sources */,
 				72A2F867241FF38C00CA8C0F /* Extensions.swift in Sources */,
+				72390F872425072B002334AE /* FavoriteRecipes.swift in Sources */,
 				72A2F865241FEBAC00CA8C0F /* SearchSession.swift in Sources */,
 				725F571E23B3BA1000E67F45 /* FavoriteTableViewController.swift in Sources */,
 				724D478D241BBEE6003D6EC2 /* Constants.swift in Sources */,
@@ -485,7 +489,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -539,7 +543,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -557,7 +561,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BGGLL93M78;
 				INFOPLIST_FILE = Reciplease/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -577,7 +581,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BGGLL93M78;
 				INFOPLIST_FILE = Reciplease/SupportingFiles/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
