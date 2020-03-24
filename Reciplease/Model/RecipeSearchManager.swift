@@ -18,6 +18,7 @@ class RecipeSearchManager: EncoderUrl {
     // MARK: - Properties
 
     private let session: AlamoSession
+    static var messageError = ""
 
     // MARK: - Initializer
 
@@ -25,13 +26,8 @@ class RecipeSearchManager: EncoderUrl {
         self.session = session
     }
 
-    var recipeManager: RecipeSearchManager?
-
     private let appID = ApiKeys.valueForApiKey(named: "app_id")
     private let appKey = ApiKeys.valueForApiKey(named: "app_key")
-    static let recipeUrl = "https://api.edamam.com/search?"
-
-    
 
     func getRecipe(ingredients: String, callback: @escaping (Result<RecipeData>) -> Void) {
         guard let baseUrl = URL(string: "https://api.edamam.com/search") else { return }
@@ -41,18 +37,18 @@ class RecipeSearchManager: EncoderUrl {
         print(url)
         session.request(with: url) { responseData in
             guard let data = responseData.data else {
-                print("no data")
                 callback(.failure(SearchError.noData))
+                RecipeSearchManager.messageError = "No data"
                 return
             }
             guard responseData.response?.statusCode == 200 else {
                 callback(.failure(SearchError.incorrectResponse))
-                print("no response")
+                RecipeSearchManager.messageError = "No response... Check your internet connection"
                 return
             }
             guard let dataDecoded = try? JSONDecoder().decode(RecipeData.self, from: data) else {
                 callback(.failure(SearchError.undecodable))
-                print("c'est la que ça foire")
+                RecipeSearchManager.messageError = "Problem in decoding Data"
                 return
             }
             callback(.success(dataDecoded))
