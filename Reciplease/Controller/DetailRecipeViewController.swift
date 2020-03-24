@@ -28,7 +28,15 @@ class DetailRecipeViewController: UIViewController {
         } else {
             setupViewFromFavorites()
         }
-        // Do any additional setup after loading the view.
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+                updateNavBar()
+    }
+
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        ingredientsTextView.setContentOffset(CGPoint.zero, animated: false)
     }
 
     func setUpViewfromSearch() {
@@ -51,37 +59,61 @@ class DetailRecipeViewController: UIViewController {
             recipeImageView.load(url: stringUrl)
         }
         guard let ingredients = recipe.ingredients else { return }
-        ingredientsTextView.text += ingredients
-        print(ingredients)
+        let ingredientsArray = ingredients.split(separator: ";")
+        for (index, ingredients) in ingredientsArray.enumerated() {
+            ingredientsTextView.text += "\(index + 1) : \(ingredients)\n"
+        }
     }
 
     @IBAction func getDirectionsPressed(_ sender: UIButton) {
-        guard let recipe = selectedRecipe else { return }
-        guard let favoriteRecipe = favoriteRecipe else { return }
+
         if vcOne {
-        guard let url = URL(string: recipe.recipe.url) else { return }
-        UIApplication.shared.open(url)
+            guard let selectedURL = selectedRecipe?.recipe.url else { return }
+            guard let url = URL(string: (selectedURL)) else { return }
+            print(url)
+            UIApplication.shared.open(url)
+
         } else {
-            guard let favoriteUrl = favoriteRecipe.url else { return }
+            guard let favoriteUrl = favoriteRecipe?.url else { return }
             guard let url = URL(string: favoriteUrl) else { return }
             UIApplication.shared.open(url)
         }
     }
-    @IBAction func favoritePressed(_ sender: UIBarButtonItem) {
 
-        //        changer l'image du thumbs up
+    func updateNavBar() {
+        if selectedRecipe?.recipe.label.lowercased() == favoriteRecipe?.label?.lowercased() {
+            favoriteBarButton.image = UIImage(named: "FullThumbsUp")
+
+        } else {
+            favoriteBarButton.image = UIImage(named: "ThumbsUp")
+        }
+    }
+
+    @IBAction func favoritePressed(_ sender: UIBarButtonItem) {
         guard let selectedRecipe = selectedRecipe else { return }
         let favoriteRecipe = FavoriteRecipes(context: AppDelegate.viewContext)
-        favoriteRecipe.label = selectedRecipe.recipe.label
-        favoriteRecipe.image = selectedRecipe.recipe.image
-        favoriteRecipe.url = selectedRecipe.recipe.url
-        for ingredient in selectedRecipe.recipe.ingredientLines {
-            favoriteRecipe.ingredients = ingredient
-        }
-        do {
-            try AppDelegate.viewContext.save()
-        } catch {
-            print(error.localizedDescription)
+        if sender.image == UIImage(named: "ThumbsUp") {
+            sender.image = UIImage(named: "FullThumbsUp")
+            favoriteRecipe.label = selectedRecipe.recipe.label
+            favoriteRecipe.image = selectedRecipe.recipe.image
+            favoriteRecipe.url = selectedRecipe.recipe.url
+            favoriteRecipe.totalTime = String(selectedRecipe.recipe.totalTime)
+            let ingredients = selectedRecipe.recipe.ingredientLines.joined(separator: ";")
+            favoriteRecipe.ingredients = ingredients
+
+            do {
+                try AppDelegate.viewContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
+        } else if sender.image == UIImage(named: "FullThumbsUp") {
+            sender.image = UIImage(named: "ThumbsUp")
+            AppDelegate.viewContext.delete(favoriteRecipe)
+            do {
+                try AppDelegate.viewContext.save()
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }
