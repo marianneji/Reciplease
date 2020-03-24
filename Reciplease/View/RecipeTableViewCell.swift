@@ -33,6 +33,7 @@ class RecipeTableViewCell: UITableViewCell {
         if let stringUrl = URL(string: recipe.recipe.image) {
             recipeImageView.load(url: stringUrl)
         }
+
         guard recipe.recipe.totalTime != 0  else {
             timeLabel.isHidden = true
             return
@@ -43,10 +44,19 @@ class RecipeTableViewCell: UITableViewCell {
 
     func setupCellFromFavorites(_ recipe: FavoriteRecipes) {
         recipeTitleLabel.text = recipe.label
+        guard let time = recipe.totalTime else  {return}
+        guard let timetotal = Int(time) else { return }
+        guard timetotal != 0 else {
+            timeLabel.isHidden = true
+            return
+        }
+        timeLabel.isHidden = false
+        timeLabel.text = stringOfMinToHours(minutes: timetotal)
         guard let imageUrl = recipe.image else { return }
         if let stringUrl = URL(string: imageUrl) {
             recipeImageView.load(url: stringUrl)
         }
+
     }
 
     func stringOfMinToHours(minutes: Int) -> String {
