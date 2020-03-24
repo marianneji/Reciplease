@@ -7,8 +7,13 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="The Heart Chakra .ttf">
+            <string>TheHeartChakra-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--Ingredient View Controller-->
+        <!--ReciPlease-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="IngredientViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,28 +22,28 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09O-im-G1W" userLabel="TopView">
-                                <rect key="frame" x="20" y="64" width="280" height="148"/>
+                                <rect key="frame" x="20" y="64" width="280" height="151"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QAB-0B-Mk7">
-                                        <rect key="frame" x="10" y="10" width="260" height="128"/>
+                                        <rect key="frame" x="10" y="10" width="260" height="131"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add ingredients" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ3-4I-VRy">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="36"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="37"/>
+                                                <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sausages, tomatoes" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7mw-Q5-yD5">
-                                                <rect key="frame" x="0.0" y="46" width="260" height="36"/>
+                                                <rect key="frame" x="0.0" y="47" width="260" height="37"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-WL-L89">
-                                                <rect key="frame" x="0.0" y="92" width="260" height="36"/>
+                                                <rect key="frame" x="0.0" y="94" width="260" height="37"/>
                                                 <color key="backgroundColor" red="0.60392156860000001" green="0.57647058819999997" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="ADD"/>
+                                                <state key="normal" title="Add"/>
                                                 <connections>
                                                     <action selector="addButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qCR-GV-5Iu"/>
                                                 </connections>
@@ -55,27 +60,15 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-tZ-Hbw" userLabel="BottomView">
-                                <rect key="frame" x="20" y="372" width="280" height="127"/>
+                                <rect key="frame" x="20" y="442" width="280" height="57"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xM7-n5-2DG">
-                                        <rect key="frame" x="10" y="10" width="260" height="107"/>
+                                        <rect key="frame" x="10" y="10" width="260" height="37"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetarian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmT-NS-PPm">
-                                                <rect key="frame" x="72.5" y="0.0" width="115.5" height="30"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                <color key="textColor" red="0.79607843140000001" green="0.94509803920000002" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="uEQ-sY-ntw">
-                                                <rect key="frame" x="105.5" y="35" width="51" height="31"/>
-                                                <connections>
-                                                    <action selector="vegetarianSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="400-2L-pde"/>
-                                                </connections>
-                                            </switch>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i97-qR-dcx">
-                                                <rect key="frame" x="0.0" y="71" width="260" height="36"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="37"/>
                                                 <color key="backgroundColor" red="0.60392156860000001" green="0.57647058819999997" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Search for Recipes"/>
                                                 <connections>
@@ -98,10 +91,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-l9-mIM">
-                                <rect key="frame" x="20" y="232" width="280" height="120"/>
+                                <rect key="frame" x="20" y="235" width="280" height="187"/>
                                 <subviews>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-VS-jo2">
-                                        <rect key="frame" x="20" y="20" width="240" height="80"/>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-VS-jo2">
+                                        <rect key="frame" x="20" y="20" width="240" height="147"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" id="jxF-CR-o3c">
@@ -110,17 +103,17 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </stackView>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Ingredients" textLabel="J4X-k8-cwK" rowHeight="104" style="IBUITableViewCellStyleDefault" id="bmL-m6-Q2c">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="Ingredients" textLabel="J4X-k8-cwK" rowHeight="104" style="IBUITableViewCellStyleDefault" id="bmL-m6-Q2c">
                                                 <rect key="frame" x="0.0" y="28" width="240" height="104"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bmL-m6-Q2c" id="Gpv-ec-lyO">
                                                     <rect key="frame" x="0.0" y="0.0" width="240" height="104"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J4X-k8-cwK">
+                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="J4X-k8-cwK">
                                                             <rect key="frame" x="15" y="0.0" width="210" height="104"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -160,8 +153,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="NWG-Fv-f6N">
+                    <navigationItem key="navigationItem" title="ReciPlease" id="NWG-Fv-f6N">
                         <barButtonItem key="rightBarButtonItem" title="CLEAR" id="vSA-CV-9Tx">
+                            <color key="tintColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="clearPressed:" destination="BYZ-38-t0r" id="vIw-1C-94j"/>
                             </connections>
@@ -182,17 +176,22 @@
         <scene sceneID="Pmb-rw-q9z">
             <objects>
                 <tableViewController id="Tm1-AI-AHa" customClass="RecipesTableViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="msj-bQ-Ich">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="msj-bQ-Ich">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="Tm1-AI-AHa" id="3qY-mJ-nxW"/>
                             <outlet property="delegate" destination="Tm1-AI-AHa" id="guo-Hz-OmR"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="i5v-Sa-ysS">
-                        <barButtonItem key="rightBarButtonItem" title="Item" id="GuY-P9-mpF"/>
+                        <barButtonItem key="rightBarButtonItem" title="More Recipes" id="GuY-P9-mpF">
+                            <color key="tintColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="addMoreRecipesPressed:" destination="Tm1-AI-AHa" id="m9y-UQ-vQ4"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="recipesTableView" destination="msj-bQ-Ich" id="xp4-38-Eln"/>
@@ -212,34 +211,34 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GZM-1h-abR">
-                                <rect key="frame" x="20" y="64" width="280" height="455"/>
+                                <rect key="frame" x="20" y="64" width="280" height="435"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipeLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AXv-8b-TYl">
-                                        <rect key="frame" x="0.0" y="0.0" width="280" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="29.5"/>
+                                        <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="30"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eGh-Ze-7Ob">
-                                        <rect key="frame" x="0.0" y="46" width="280" height="150"/>
+                                        <rect key="frame" x="0.0" y="39.5" width="280" height="150"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="5Ds-b4-Fxc"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ab-Ma-IK4">
-                                        <rect key="frame" x="0.0" y="206" width="280" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ab-Ma-IK4">
+                                        <rect key="frame" x="0.0" y="199.5" width="280" height="24.5"/>
+                                        <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H64-hM-0Wr" userLabel="ContainerView">
-                                        <rect key="frame" x="0.0" y="252" width="280" height="143"/>
+                                        <rect key="frame" x="0.0" y="234" width="280" height="141"/>
                                         <subviews>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IlY-R2-KYF">
-                                                <rect key="frame" x="10" y="0.0" width="260" height="143"/>
+                                                <rect key="frame" x="10" y="0.0" width="260" height="141"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                                <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
@@ -253,13 +252,14 @@
                                         </constraints>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V3B-7a-PiI">
-                                        <rect key="frame" x="0.0" y="405" width="280" height="50"/>
-                                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <rect key="frame" x="0.0" y="385" width="280" height="50"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="ytU-VO-a0N"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                         <state key="normal" title="Get Directions">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
                                             <action selector="getDirectionsPressed:" destination="h6a-3e-L1z" eventType="touchUpInside" id="jQt-MF-P0v"/>
@@ -272,9 +272,9 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.66213375330000002" green="0.30792057509999998" blue="0.55978113409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="hXh-aA-6A0" firstAttribute="bottom" secondItem="GZM-1h-abR" secondAttribute="bottom" id="Rg3-au-5tQ"/>
+                            <constraint firstItem="hXh-aA-6A0" firstAttribute="bottom" secondItem="GZM-1h-abR" secondAttribute="bottom" constant="20" id="Rg3-au-5tQ"/>
                             <constraint firstItem="GZM-1h-abR" firstAttribute="top" secondItem="hXh-aA-6A0" secondAttribute="top" constant="20" id="ViN-Nc-Ced"/>
                             <constraint firstItem="GZM-1h-abR" firstAttribute="leading" secondItem="hXh-aA-6A0" secondAttribute="leading" constant="20" id="nYo-rx-JV1"/>
                             <constraint firstItem="hXh-aA-6A0" firstAttribute="trailing" secondItem="GZM-1h-abR" secondAttribute="trailing" constant="20" id="x7K-wQ-VVD"/>
@@ -283,7 +283,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="cr3-bO-nTh">
                         <barButtonItem key="rightBarButtonItem" image="ThumbsUp" id="lNP-ry-oih">
-                            <color key="tintColor" red="0.85882352939999995" green="0.18823529410000001" blue="0.33725490200000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="favoritePressed:" destination="h6a-3e-L1z" id="gOT-Vz-LAK"/>
                             </connections>
@@ -309,6 +309,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="ppN-GZ-4ea" kind="relationship" relationship="viewControllers" id="BCC-ZP-RGB"/>
@@ -330,6 +332,12 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fi6-R1-TGq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -340,20 +348,20 @@
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="109.82142857142857"/>
         </scene>
-        <!--Favorite Table View Controller-->
+        <!--My Favorites Recipes-->
         <scene sceneID="LSa-Sj-DdC">
             <objects>
                 <tableViewController id="XgS-jx-wo1" customClass="FavoriteTableViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="k4m-70-qwd">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="k4m-70-qwd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <connections>
                             <outlet property="dataSource" destination="XgS-jx-wo1" id="kEV-sZ-fNV"/>
                             <outlet property="delegate" destination="XgS-jx-wo1" id="h39-Ss-3aN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="jjB-HV-Gcb"/>
+                    <navigationItem key="navigationItem" title="My Favorites Recipes" id="jjB-HV-Gcb"/>
                     <connections>
                         <segue destination="h6a-3e-L1z" kind="show" identifier="showDetailFavoriteRecipe" id="bR3-Vr-Izl"/>
                     </connections>
@@ -371,6 +379,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="jkl-tU-6zS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="textShadowColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
