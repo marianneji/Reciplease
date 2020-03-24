@@ -16,6 +16,7 @@
 		724D4789241B9BFF003D6EC2 /* Recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 724D4788241B9BFF003D6EC2 /* Recipe.json */; };
 		724D478B241B9F91003D6EC2 /* RecipeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724D478A241B9F91003D6EC2 /* RecipeData.swift */; };
 		724D478D241BBEE6003D6EC2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 724D478C241BBEE6003D6EC2 /* Constants.swift */; };
+		72524D50242A1A1600D1B584 /* BeautifulPeople.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 72524D4F242A182F00D1B584 /* BeautifulPeople.ttf */; };
 		725F56EF23B3B3CB00E67F45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F56EE23B3B3CB00E67F45 /* AppDelegate.swift */; };
 		725F56F123B3B3CB00E67F45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F56F023B3B3CB00E67F45 /* SceneDelegate.swift */; };
 		725F56F323B3B3CB00E67F45 /* IngredientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F56F223B3B3CB00E67F45 /* IngredientViewController.swift */; };
@@ -25,10 +26,11 @@
 		725F56FE23B3B3CD00E67F45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 725F56FC23B3B3CD00E67F45 /* LaunchScreen.storyboard */; };
 		725F570923B3B3CD00E67F45 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F570823B3B3CD00E67F45 /* RecipleaseTests.swift */; };
 		725F571A23B3B73D00E67F45 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 725F571923B3B73D00E67F45 /* .gitignore */; };
-		725F571C23B3B7E200E67F45 /* SearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F571B23B3B7E200E67F45 /* SearchManager.swift */; };
+		725F571C23B3B7E200E67F45 /* RecipeSearchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F571B23B3B7E200E67F45 /* RecipeSearchManager.swift */; };
 		725F571E23B3BA1000E67F45 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F571D23B3BA1000E67F45 /* FavoriteTableViewController.swift */; };
 		72673AAE241B932600548C87 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72673AAD241B932600548C87 /* ApiKeys.plist */; };
 		72673AB0241B93D100548C87 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72673AAF241B93D100548C87 /* ApiKeys.swift */; };
+		727B6BB6242A261B00AF9A9F /* The Heart Chakra .ttf in Resources */ = {isa = PBXBuildFile; fileRef = 727B6BB5242A261B00AF9A9F /* The Heart Chakra .ttf */; };
 		72A2F865241FEBAC00CA8C0F /* SearchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2F864241FEBAC00CA8C0F /* SearchSession.swift */; };
 		72A2F867241FF38C00CA8C0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2F866241FF38C00CA8C0F /* Extensions.swift */; };
 		8487345B03B4E5E76CD8F00F /* Pods_RecipleaseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30591CA10A93810BB48BB2EE /* Pods_RecipleaseTests.framework */; };
@@ -55,6 +57,7 @@
 		724D4788241B9BFF003D6EC2 /* Recipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipe.json; sourceTree = "<group>"; };
 		724D478A241B9F91003D6EC2 /* RecipeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeData.swift; sourceTree = "<group>"; };
 		724D478C241BBEE6003D6EC2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		72524D4F242A182F00D1B584 /* BeautifulPeople.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = BeautifulPeople.ttf; sourceTree = "<group>"; };
 		725F56EB23B3B3CB00E67F45 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		725F56EE23B3B3CB00E67F45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		725F56F023B3B3CB00E67F45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,10 +71,11 @@
 		725F570823B3B3CD00E67F45 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
 		725F570A23B3B3CD00E67F45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		725F571923B3B73D00E67F45 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		725F571B23B3B7E200E67F45 /* SearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchManager.swift; sourceTree = "<group>"; };
+		725F571B23B3B7E200E67F45 /* RecipeSearchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeSearchManager.swift; sourceTree = "<group>"; };
 		725F571D23B3BA1000E67F45 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		72673AAD241B932600548C87 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		72673AAF241B93D100548C87 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		727B6BB5242A261B00AF9A9F /* The Heart Chakra .ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Heart Chakra .ttf"; sourceTree = "<group>"; };
 		72A2F864241FEBAC00CA8C0F /* SearchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSession.swift; sourceTree = "<group>"; };
 		72A2F866241FF38C00CA8C0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A626DECB2408D146C68C2D4C /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,7 +169,7 @@
 		725F571323B3B3E900E67F45 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				725F571B23B3B7E200E67F45 /* SearchManager.swift */,
+				725F571B23B3B7E200E67F45 /* RecipeSearchManager.swift */,
 				724D478A241B9F91003D6EC2 /* RecipeData.swift */,
 				72A2F864241FEBAC00CA8C0F /* SearchSession.swift */,
 				725F56F723B3B3CB00E67F45 /* Reciplease.xcdatamodeld */,
@@ -199,6 +203,8 @@
 		725F571623B3B40300E67F45 /* SupportingFiles */ = {
 			isa = PBXGroup;
 			children = (
+				727B6BB5242A261B00AF9A9F /* The Heart Chakra .ttf */,
+				72524D4F242A182F00D1B584 /* BeautifulPeople.ttf */,
 				725F56EE23B3B3CB00E67F45 /* AppDelegate.swift */,
 				725F56F023B3B3CB00E67F45 /* SceneDelegate.swift */,
 				725F56FA23B3B3CD00E67F45 /* Assets.xcassets */,
@@ -295,7 +301,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727B6BB6242A261B00AF9A9F /* The Heart Chakra .ttf in Resources */,
 				725F571A23B3B73D00E67F45 /* .gitignore in Resources */,
+				72524D50242A1A1600D1B584 /* BeautifulPeople.ttf in Resources */,
 				725F56FE23B3B3CD00E67F45 /* LaunchScreen.storyboard in Resources */,
 				725F56FB23B3B3CD00E67F45 /* Assets.xcassets in Resources */,
 				723BC82F242264A6007D2A01 /* RecipeTableViewCell.xib in Resources */,
@@ -388,7 +396,7 @@
 				725F56F923B3B3CB00E67F45 /* Reciplease.xcdatamodeld in Sources */,
 				725F56F323B3B3CB00E67F45 /* IngredientViewController.swift in Sources */,
 				723BC82E242257BE007D2A01 /* RecipeTableViewCell.swift in Sources */,
-				725F571C23B3B7E200E67F45 /* SearchManager.swift in Sources */,
+				725F571C23B3B7E200E67F45 /* RecipeSearchManager.swift in Sources */,
 				723BC82B2422573D007D2A01 /* RecipesTableViewController.swift in Sources */,
 				725F56EF23B3B3CB00E67F45 /* AppDelegate.swift in Sources */,
 				724D478B241B9F91003D6EC2 /* RecipeData.swift in Sources */,
