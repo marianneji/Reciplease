@@ -11,7 +11,7 @@ import UIKit
 class IngredientViewController: UIViewController {
 
     @IBOutlet weak var ingredientTextField: UITextField!
-    @IBOutlet weak var ingredientTableView: UITableView! { didSet { ingredientTableView.tableFooterView = UIView() }}
+    @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
 
     var alert = UIAlertController()
@@ -24,6 +24,8 @@ class IngredientViewController: UIViewController {
         super.viewDidLoad()
         ingredientTableView.reloadData()
         ingredientTextField.delegate = self
+//        let attributes = [NSAttributedString.Key.font: UIFont(name: "The Heart Chakra .ttf", size: 20)!]
+//        UINavigationBar.appearance().titleTextAttributes = attributes
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -51,11 +53,18 @@ class IngredientViewController: UIViewController {
                     switch result {
                     case .failure(let error):
                         self.searchButton.isEnabled = true
-                        self.didFailWithError(message: error.localizedDescription)
+                        self.didFailWithError(message: RecipeSearchManager.messageError)
                         print("\(error) in result...ou là")
                     case .success(let recipesData):
                         self.recipeData = recipesData
-                        self.performSegue(withIdentifier: "toAllRecipes", sender: nil)
+                        if recipesData.hits.count == 0 {
+                            self.didFailWithError(message: "No recipes with these ingredients")
+                            self.ingredients.removeAll()
+                            self.ingredientTableView.reloadData()
+                            self.searchButton.isEnabled = true
+                        } else {
+                            self.performSegue(withIdentifier: "toAllRecipes", sender: nil)
+                        }
                     }
                 }
             }
@@ -65,9 +74,6 @@ class IngredientViewController: UIViewController {
     @IBAction func clearPressed(_ sender: UIBarButtonItem) {
         ingredients.removeAll()
         ingredientTableView.reloadData()
-    }
-
-    @IBAction func vegetarianSwitch(_ sender: UISwitch) {
     }
 }
 
