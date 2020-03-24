@@ -15,24 +15,26 @@ class FavoriteTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if favoriteRecipe.count == 0 {
+            didFailWithError(message: "No favorites recipes... Click on the Thumbs Up in one recipe to add it to your favorites")
+        }
         tableView.reloadData()
         let nibName = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "recipeCell")
     }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         favoriteRecipe = FavoriteRecipes.all
+        tableView.reloadData()
     }
 
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return favoriteRecipe.count
     }
 
@@ -41,7 +43,6 @@ class FavoriteTableViewController: UITableViewController {
             return UITableViewCell()
         }
         cell.setupCellFromFavorites(favoriteRecipe[indexPath.row])
-
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -68,18 +69,13 @@ class FavoriteTableViewController: UITableViewController {
         performSegue(withIdentifier: "showDetailFavoriteRecipe", sender: favoriteRecipe[indexPath.row])
     }
 
-
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+
         guard segue.identifier == "showDetailFavoriteRecipe" else { return }
         guard let detailVC = segue.destination as? DetailRecipeViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
         detailVC.favoriteRecipe = favoriteRecipe[indexPath.row]
         detailVC.vcOne = false
     }
-
 }
