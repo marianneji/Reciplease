@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zVd-SF-qhq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="zVd-SF-qhq">
     <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,24 +22,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="09O-im-G1W" userLabel="TopView">
-                                <rect key="frame" x="20" y="64" width="280" height="151"/>
+                                <rect key="frame" x="20" y="64" width="280" height="166"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="QAB-0B-Mk7">
-                                        <rect key="frame" x="10" y="10" width="260" height="131"/>
+                                        <rect key="frame" x="10" y="10" width="260" height="146"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add ingredients" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQ3-4I-VRy">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="42"/>
                                                 <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Sausages, tomatoes" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7mw-Q5-yD5">
-                                                <rect key="frame" x="0.0" y="47" width="260" height="37"/>
+                                                <rect key="frame" x="0.0" y="52" width="260" height="42"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mBQ-WL-L89">
-                                                <rect key="frame" x="0.0" y="94" width="260" height="37"/>
+                                                <rect key="frame" x="0.0" y="104" width="260" height="42"/>
                                                 <color key="backgroundColor" red="0.60392156860000001" green="0.57647058819999997" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -60,13 +60,13 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x1d-tZ-Hbw" userLabel="BottomView">
-                                <rect key="frame" x="20" y="442" width="280" height="57"/>
+                                <rect key="frame" x="20" y="437" width="280" height="62"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="xM7-n5-2DG">
-                                        <rect key="frame" x="10" y="10" width="260" height="37"/>
+                                        <rect key="frame" x="10" y="10" width="260" height="42"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i97-qR-dcx">
-                                                <rect key="frame" x="0.0" y="0.0" width="260" height="37"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="260" height="42"/>
                                                 <color key="backgroundColor" red="0.60392156860000001" green="0.57647058819999997" blue="0.56862745100000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="TheHeartChakra-Regular" family="The Heart Chakra" pointSize="25"/>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -91,10 +91,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fuk-l9-mIM">
-                                <rect key="frame" x="20" y="235" width="280" height="187"/>
+                                <rect key="frame" x="20" y="250" width="280" height="167"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jZQ-VS-jo2">
-                                        <rect key="frame" x="20" y="20" width="240" height="147"/>
+                                        <rect key="frame" x="20" y="20" width="240" height="127"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="10" id="jxF-CR-o3c">
@@ -162,9 +162,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addButton" destination="mBQ-WL-L89" id="iwf-yd-L70"/>
                         <outlet property="ingredientTableView" destination="jZQ-VS-jo2" id="RLs-18-XcW"/>
                         <outlet property="ingredientTextField" destination="7mw-Q5-yD5" id="NhD-Zu-upi"/>
                         <outlet property="searchButton" destination="i97-qR-dcx" id="BJm-rh-NwB"/>
+                        <outletCollection property="containingViews" destination="x1d-tZ-Hbw" collectionClass="NSMutableArray" id="X7c-Zo-euu"/>
+                        <outletCollection property="containingViews" destination="09O-im-G1W" collectionClass="NSMutableArray" id="a0C-ev-Uqd"/>
+                        <outletCollection property="containingViews" destination="fuk-l9-mIM" collectionClass="NSMutableArray" id="aFm-Tc-mny"/>
                         <segue destination="Tm1-AI-AHa" kind="show" identifier="toAllRecipes" id="HTy-U9-45c"/>
                     </connections>
                 </viewController>
@@ -285,7 +289,7 @@
                         <barButtonItem key="rightBarButtonItem" image="ThumbsUp" id="lNP-ry-oih">
                             <color key="tintColor" red="0.587708652" green="0.18307802079999999" blue="0.32725864649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
-                                <action selector="favoritePressed:" destination="h6a-3e-L1z" id="gOT-Vz-LAK"/>
+                                <action selector="favoritePressed:" destination="h6a-3e-L1z" id="po5-aY-UKF"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -395,10 +399,10 @@
             <point key="canvasLocation" x="1057.5" y="898.94366197183103"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="ThumbsUp" width="72" height="72"/>
-    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="bR3-Vr-Izl"/>
     </inferredMetricsTieBreakers>
+    <resources>
+        <image name="ThumbsUp" width="72" height="72"/>
+    </resources>
 </document>

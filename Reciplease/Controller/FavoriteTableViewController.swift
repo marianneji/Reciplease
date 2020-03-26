@@ -11,22 +11,25 @@ import CoreData
 
 class FavoriteTableViewController: UITableViewController {
 
-    var favoriteRecipe = FavoriteRecipes.all
+    var coreDataManager: CoreDataManager?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        if favoriteRecipe.count == 0 {
-            didFailWithError(message: "No favorites recipes... Click on the Thumbs Up in one recipe to add it to your favorites")
-        }
         tableView.reloadData()
         let nibName = UINib(nibName: "RecipeTableViewCell", bundle: nil)
         tableView.register(nibName, forCellReuseIdentifier: "recipeCell")
+        guard let appdelegate = UIApplication.shared.delegate as? AppDelegate else { return }
+        let coredataStack = appdelegate.coreDataStack
+        coreDataManager = CoreDataManager(coreDataStack: coredataStack)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        favoriteRecipe = FavoriteRecipes.all
         tableView.reloadData()
+        guard coreDataManager?.favoriteRecipes.count != 0  else {
+            didFailWithError("", message: "No favorites recipes... Click on the 👍 on one recipe to add it to your favorites")
+            return
+        }
     }
 
     // MARK: - Table view data source
@@ -35,14 +38,15 @@ class FavoriteTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return favoriteRecipe.count
+        return coreDataManager?.favoriteRecipes.count ?? 0
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "recipeCell", for: indexPath) as? RecipeTableViewCell else {
             return UITableViewCell()
         }
-        cell.setupCellFromFavorites(favoriteRecipe[indexPath.row])
+        guard let favoriteRecipes = coreDataManager?.favoriteRecipes[indexPath.row] else { return UITableViewCell()}
+        cell.setupCellFromFavorites(favoriteRecipes)
         return cell
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -51,31 +55,24 @@ class FavoriteTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            AppDelegate.viewContext.delete(favoriteRecipe[indexPath.row])
-            favoriteRecipe.remove(at: indexPath.row)
+            guard let recipe = coreDataManager?.favoriteRecipes[indexPath.row].label else { return }
+            coreDataManager?.deleteRecipeFromFavorite(recipeLabel: recipe )
             tableView.deleteRows(at: [indexPath], with: .fade)
 
-            do {
-                try AppDelegate.viewContext.save()
-            } catch {
-                print(error.localizedDescription)
-            }
             tableView.reloadData()
         }
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "showDetailFavoriteRecipe", sender: favoriteRecipe[indexPath.row])
+        performSegue(withIdentifier: "showDetailFavoriteRecipe", sender: coreDataManager?.favoriteRecipes[indexPath.row])
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         guard segue.identifier == "showDetailFavoriteRecipe" else { return }
         guard let detailVC = segue.destination as? DetailRecipeViewController else { return }
         guard let indexPath = tableView.indexPathForSelectedRow else { return }
-        detailVC.favoriteRecipe = favoriteRecipe[indexPath.row]
+        detailVC.favoriteRecipe = coreDataManager?.favoriteRecipes[indexPath.row]
         detailVC.vcOne = false
     }
 }

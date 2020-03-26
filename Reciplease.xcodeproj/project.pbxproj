@@ -30,6 +30,7 @@
 		725F571E23B3BA1000E67F45 /* FavoriteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 725F571D23B3BA1000E67F45 /* FavoriteTableViewController.swift */; };
 		72673AAE241B932600548C87 /* ApiKeys.plist in Resources */ = {isa = PBXBuildFile; fileRef = 72673AAD241B932600548C87 /* ApiKeys.plist */; };
 		72673AB0241B93D100548C87 /* ApiKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72673AAF241B93D100548C87 /* ApiKeys.swift */; };
+		72794C8F242B662E00E18294 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72794C8E242B662E00E18294 /* CoreDataStack.swift */; };
 		727B6BB6242A261B00AF9A9F /* The Heart Chakra .ttf in Resources */ = {isa = PBXBuildFile; fileRef = 727B6BB5242A261B00AF9A9F /* The Heart Chakra .ttf */; };
 		72A2F865241FEBAC00CA8C0F /* SearchSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2F864241FEBAC00CA8C0F /* SearchSession.swift */; };
 		72A2F867241FF38C00CA8C0F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72A2F866241FF38C00CA8C0F /* Extensions.swift */; };
@@ -75,6 +76,7 @@
 		725F571D23B3BA1000E67F45 /* FavoriteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewController.swift; sourceTree = "<group>"; };
 		72673AAD241B932600548C87 /* ApiKeys.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ApiKeys.plist; sourceTree = "<group>"; };
 		72673AAF241B93D100548C87 /* ApiKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiKeys.swift; sourceTree = "<group>"; };
+		72794C8E242B662E00E18294 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		727B6BB5242A261B00AF9A9F /* The Heart Chakra .ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "The Heart Chakra .ttf"; sourceTree = "<group>"; };
 		72A2F864241FEBAC00CA8C0F /* SearchSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSession.swift; sourceTree = "<group>"; };
 		72A2F866241FF38C00CA8C0F /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				725F571623B3B40300E67F45 /* SupportingFiles */,
+				72794C8D242B660900E18294 /* CoreDataModules */,
 				725F571323B3B3E900E67F45 /* Model */,
 				725F571523B3B3FA00E67F45 /* View */,
 				725F571423B3B3F100E67F45 /* Controller */,
@@ -172,8 +175,6 @@
 				725F571B23B3B7E200E67F45 /* RecipeSearchManager.swift */,
 				724D478A241B9F91003D6EC2 /* RecipeData.swift */,
 				72A2F864241FEBAC00CA8C0F /* SearchSession.swift */,
-				725F56F723B3B3CB00E67F45 /* Reciplease.xcdatamodeld */,
-				72390F862425072B002334AE /* FavoriteRecipes.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -215,6 +216,16 @@
 				72A2F866241FF38C00CA8C0F /* Extensions.swift */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		72794C8D242B660900E18294 /* CoreDataModules */ = {
+			isa = PBXGroup;
+			children = (
+				72390F862425072B002334AE /* FavoriteRecipes.swift */,
+				72794C8E242B662E00E18294 /* CoreDataStack.swift */,
+				725F56F723B3B3CB00E67F45 /* Reciplease.xcdatamodeld */,
+			);
+			path = CoreDataModules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +407,7 @@
 				725F56F923B3B3CB00E67F45 /* Reciplease.xcdatamodeld in Sources */,
 				725F56F323B3B3CB00E67F45 /* IngredientViewController.swift in Sources */,
 				723BC82E242257BE007D2A01 /* RecipeTableViewCell.swift in Sources */,
+				72794C8F242B662E00E18294 /* CoreDataStack.swift in Sources */,
 				725F571C23B3B7E200E67F45 /* RecipeSearchManager.swift in Sources */,
 				723BC82B2422573D007D2A01 /* RecipesTableViewController.swift in Sources */,
 				725F56EF23B3B3CB00E67F45 /* AppDelegate.swift in Sources */,

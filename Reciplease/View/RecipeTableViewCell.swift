@@ -14,6 +14,7 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeTitleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
 
+    @IBOutlet weak var containerView: UIView!
 
     
     override func awakeFromNib() {
@@ -28,7 +29,7 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     func setupCellFromSearch (_ recipe: Hit) {
-
+        setRoundedView()
         recipeTitleLabel.text = recipe.recipe.label
         if let stringUrl = URL(string: recipe.recipe.image) {
             recipeImageView.load(url: stringUrl)
@@ -43,6 +44,7 @@ class RecipeTableViewCell: UITableViewCell {
     }
 
     func setupCellFromFavorites(_ recipe: FavoriteRecipes) {
+        setRoundedView()
         recipeTitleLabel.text = recipe.label
         guard let time = recipe.totalTime else  {return}
         guard let timetotal = Int(time) else { return }
@@ -52,9 +54,13 @@ class RecipeTableViewCell: UITableViewCell {
         }
         timeLabel.isHidden = false
         timeLabel.text = stringOfMinToHours(minutes: timetotal)
-        guard let imageUrl = recipe.image else { return }
+        guard let imageUrl = recipe.image else {
+            print("no url image")
+            return }
         if let stringUrl = URL(string: imageUrl) {
             recipeImageView.load(url: stringUrl)
+        } else {
+            
         }
 
     }
@@ -69,6 +75,11 @@ class RecipeTableViewCell: UITableViewCell {
         } else {
             return "\(h)H" + "\(m)m"
         }
+    }
+
+    func setRoundedView() {
+        containerView.layer.cornerRadius = 20
+        recipeImageView.layer.cornerRadius = 20
     }
 
 }

@@ -10,9 +10,13 @@ import UIKit
 
 class IngredientViewController: UIViewController {
 
+
+
+    @IBOutlet var containingViews: [UIView]!
     @IBOutlet weak var ingredientTextField: UITextField!
     @IBOutlet weak var ingredientTableView: UITableView!
     @IBOutlet weak var searchButton: UIButton!
+    @IBOutlet weak var addButton: UIButton!
 
     var alert = UIAlertController()
     var recipeManager = RecipeSearchManager()
@@ -22,14 +26,22 @@ class IngredientViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ingredientTableView.reloadData()
+        setupRoundedViews(by: 15)
         ingredientTextField.delegate = self
-//        let attributes = [NSAttributedString.Key.font: UIFont(name: "The Heart Chakra .ttf", size: 20)!]
-//        UINavigationBar.appearance().titleTextAttributes = attributes
+
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         searchButton.isEnabled = true
+    }
+    func setupRoundedViews(by rounded: CGFloat) {
+        for view in containingViews {
+            view.layer.cornerRadius = rounded
+        }
+        searchButton.layer.cornerRadius = rounded / 2
+        addButton.layer.cornerRadius = rounded / 2
+        ingredientTableView.layer.cornerRadius = rounded
+        ingredientTextField.layer.cornerRadius = rounded
     }
 
     @IBAction func addButtonPressed(_ sender: UIButton) {
