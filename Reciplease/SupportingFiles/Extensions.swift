@@ -58,8 +58,8 @@ extension UIImageView {
 //}
 extension UIViewController {
 
-    func didFailWithError(message: String) {
-        let ac = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+    func didFailWithError(_ title: String? = "Error", message: String) {
+        let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(ac, animated: true)
     }
